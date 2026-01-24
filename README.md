@@ -1,25 +1,25 @@
-# SyncForge
+# Synqr
 
-[![CI](https://github.com/ArthurzKV/syncforge/actions/workflows/ci.yml/badge.svg)](https://github.com/ArthurzKV/syncforge/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/@syncforge%2Fcore.svg)](https://www.npmjs.com/package/@syncforge/core)
+[![CI](https://github.com/ArthurzKV/synqr/actions/workflows/ci.yml/badge.svg)](https://github.com/ArthurzKV/synqr/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/synqr-core.svg)](https://www.npmjs.com/package/synqr-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > Next-generation CRDT library for building offline-first collaborative applications in TypeScript.
 
 ## Performance
 
-SyncForge is **faster than Yjs and Automerge** on key benchmarks:
+Synqr is **faster than Yjs and Automerge** on key benchmarks:
 
-| Benchmark | SyncForge | Yjs | Automerge |
+| Benchmark | Synqr | Yjs | Automerge |
 |-----------|-----------|-----|-----------|
 | Sequential edits (10K ops) | **16ms** | 21ms | 2,072ms |
 | Two-client merge | **3.9ms** | 4.7ms | 34.6ms |
 
 See [BENCHMARKS.md](BENCHMARKS.md) for full results.
 
-## Why SyncForge?
+## Why Synqr?
 
-| Feature | Automerge | Yjs | **SyncForge** |
+| Feature | Automerge | Yjs | **Synqr** |
 |---------|-----------|-----|---------------|
 | **Faster than Yjs** | No | - | **Yes** |
 | Declarative schemas | No | No | **Yes** |
@@ -30,8 +30,8 @@ See [BENCHMARKS.md](BENCHMARKS.md) for full results.
 ## Quick Example
 
 ```typescript
-import { createDocument, merge } from '@syncforge/core';
-import { defineSchema, t } from '@syncforge/schema';
+import { createDocument, merge } from 'synqr-core';
+import { defineSchema, t } from '@synqr-schema';
 
 // Define your schema with full TypeScript inference
 const TaskSchema = defineSchema({
@@ -66,33 +66,33 @@ console.log(merged.get('priority')); // 1 - counters add up
 ## Installation
 
 ```bash
-npm install @syncforge/core @syncforge/types @syncforge/schema @syncforge/sync
+npm install synqr-core @synqr-types @synqr-schema @synqr-sync
 ```
 
 Or install packages individually:
 
 ```bash
 # Core CRDT engine
-npm install @syncforge/core
+npm install synqr-core
 
 # CRDT type implementations
-npm install @syncforge/types
+npm install @synqr-types
 
 # Schema system
-npm install @syncforge/schema
+npm install @synqr-schema
 
 # Sync protocol & plugins
-npm install @syncforge/sync
+npm install @synqr-sync
 ```
 
 ## Packages
 
 | Package | Description |
 |---------|-------------|
-| `@syncforge/core` | CRDT engine, hybrid clock, document, merge |
-| `@syncforge/types` | LWW/MV registers, counters, sets, maps, lists, rich text |
-| `@syncforge/schema` | Declarative schemas with TypeScript inference |
-| `@syncforge/sync` | Sync protocol, WebSocket & IndexedDB plugins |
+| `synqr-core` | CRDT engine, hybrid clock, document, merge |
+| `@synqr-types` | LWW/MV registers, counters, sets, maps, lists, rich text |
+| `@synqr-schema` | Declarative schemas with TypeScript inference |
+| `@synqr-sync` | Sync protocol, WebSocket & IndexedDB plugins |
 
 ## CRDT Types
 

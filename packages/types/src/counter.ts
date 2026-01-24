@@ -9,7 +9,7 @@ import type {
   Path,
   IncrementOp,
   DecrementOp,
-} from '@syncforge/core';
+} from 'synqr-core';
 
 /**
  * G-Counter: Grow-only Counter

@@ -1,7 +1,7 @@
 /**
- * SyncForge Benchmark Suite
+ * Synqr Benchmark Suite
  *
- * Compares SyncForge vs Yjs vs Automerge
+ * Compares Synqr vs Yjs vs Automerge
  * Run with: node --expose-gc --loader ts-node/esm src/index.ts
  */
 
@@ -11,7 +11,7 @@ import { measure, formatResultsTable, formatMergeTable, BenchmarkResult, forceGC
 import * as Y from 'yjs';
 import * as Automerge from '@automerge/automerge';
 
-// Import SyncForge (from parent workspace)
+// Import Synqr (from parent workspace)
 import { createDocument, merge } from '../../packages/core/dist/index.js';
 
 const OPERATIONS = 10_000;
@@ -20,8 +20,8 @@ const OPERATIONS = 10_000;
 // B1: Sequential Edits (append characters)
 // ============================================================================
 
-async function b1SyncForge(): Promise<BenchmarkResult> {
-  return measure('B1: Sequential Edits', 'SyncForge', OPERATIONS, () => {
+async function b1Synqr(): Promise<BenchmarkResult> {
+  return measure('B1: Sequential Edits', 'Synqr', OPERATIONS, () => {
     const doc = createDocument({ id: 'bench', replicaId: 'r1' });
 
     for (let i = 0; i < OPERATIONS; i++) {
@@ -66,7 +66,7 @@ async function b1Automerge(): Promise<BenchmarkResult> {
 // B2: Two-Client Merge
 // ============================================================================
 
-async function b2SyncForge(): Promise<BenchmarkResult> {
+async function b2Synqr(): Promise<BenchmarkResult> {
   // Setup: create two documents with initial data
   const doc1 = createDocument({ id: 'bench', replicaId: 'r1' });
   const doc2 = createDocument({ id: 'bench', replicaId: 'r2' });
@@ -80,7 +80,7 @@ async function b2SyncForge(): Promise<BenchmarkResult> {
 
   forceGC();
 
-  return measure('B2: Two-Client Merge', 'SyncForge', 1000, () => {
+  return measure('B2: Two-Client Merge', 'Synqr', 1000, () => {
     // Each client makes 500 edits
     for (let i = 0; i < 500; i++) {
       doc1.listPush('text', 'a');
@@ -154,7 +154,7 @@ async function b2Automerge(): Promise<BenchmarkResult> {
 // ============================================================================
 
 async function main() {
-  console.log('# SyncForge Benchmark Results\n');
+  console.log('# Synqr Benchmark Results\n');
   console.log(`Date: ${new Date().toISOString()}`);
   console.log(`Node: ${process.version}`);
   console.log(`Operations: ${OPERATIONS.toLocaleString()}\n`);
@@ -165,10 +165,10 @@ async function main() {
   const b1Results: BenchmarkResult[] = [];
 
   try {
-    b1Results.push(await b1SyncForge());
-    console.log('  SyncForge: done');
+    b1Results.push(await b1Synqr());
+    console.log('  Synqr: done');
   } catch (e) {
-    console.log('  SyncForge: FAILED -', (e as Error).message);
+    console.log('  Synqr: FAILED -', (e as Error).message);
   }
 
   try {
@@ -192,10 +192,10 @@ async function main() {
   const b2Results: BenchmarkResult[] = [];
 
   try {
-    b2Results.push(await b2SyncForge());
-    console.log('  SyncForge: done');
+    b2Results.push(await b2Synqr());
+    console.log('  Synqr: done');
   } catch (e) {
-    console.log('  SyncForge: FAILED -', (e as Error).message);
+    console.log('  Synqr: FAILED -', (e as Error).message);
   }
 
   try {
@@ -219,22 +219,22 @@ async function main() {
   console.log('## Summary\n');
 
   if (b1Results.length >= 2) {
-    const syncforgeB1 = b1Results.find(r => r.library === 'SyncForge');
+    const synqrB1 = b1Results.find(r => r.library === 'Synqr');
     const yjsB1 = b1Results.find(r => r.library === 'Yjs');
 
-    if (syncforgeB1 && yjsB1) {
-      const ratio = (syncforgeB1.timeMs / yjsB1.timeMs).toFixed(2);
-      console.log(`- B1: SyncForge is ${ratio}x ${Number(ratio) > 1 ? 'slower' : 'faster'} than Yjs`);
+    if (synqrB1 && yjsB1) {
+      const ratio = (synqrB1.timeMs / yjsB1.timeMs).toFixed(2);
+      console.log(`- B1: Synqr is ${ratio}x ${Number(ratio) > 1 ? 'slower' : 'faster'} than Yjs`);
     }
   }
 
   if (b2Results.length >= 2) {
-    const syncforgeB2 = b2Results.find(r => r.library === 'SyncForge');
+    const synqrB2 = b2Results.find(r => r.library === 'Synqr');
     const yjsB2 = b2Results.find(r => r.library === 'Yjs');
 
-    if (syncforgeB2 && yjsB2) {
-      const ratio = (syncforgeB2.timeMs / yjsB2.timeMs).toFixed(2);
-      console.log(`- B2: SyncForge is ${ratio}x ${Number(ratio) > 1 ? 'slower' : 'faster'} than Yjs`);
+    if (synqrB2 && yjsB2) {
+      const ratio = (synqrB2.timeMs / yjsB2.timeMs).toFixed(2);
+      console.log(`- B2: Synqr is ${ratio}x ${Number(ratio) > 1 ? 'slower' : 'faster'} than Yjs`);
     }
   }
 }

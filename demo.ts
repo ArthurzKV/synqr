@@ -1,20 +1,20 @@
 /**
- * SyncForge Demo
+ * Synqr Demo
  *
- * This demo shows the key features of SyncForge:
+ * This demo shows the key features of Synqr:
  * 1. Schema-based document creation
  * 2. Offline-first operations
  * 3. Conflict-free merging
  * 4. Real-time sync
  */
 
-import { Document, createDocument, merge } from '@syncforge/core';
-import { defineSchema, t, type InferSchemaType } from '@syncforge/schema';
+import { Document, createDocument, merge } from '@synqr-core';
+import { defineSchema, t, type InferSchemaType } from '@synqr-schema';
 import {
-  SyncForge,
-  createSyncForge,
+  Synqr,
+  createSynqr,
   createInMemoryPlugin,
-} from '@syncforge/sync';
+} from '@synqr-sync';
 
 // ============================================
 // 1. Define your schema
@@ -40,14 +40,14 @@ const ProjectSchema = defineSchema({
 type Project = InferSchemaType<typeof ProjectSchema>;
 
 // ============================================
-// 2. Basic usage with SyncForge
+// 2. Basic usage with Synqr
 // ============================================
 
 async function basicUsageDemo() {
   console.log('=== Basic Usage Demo ===\n');
 
-  // Create SyncForge instance with in-memory persistence
-  const forge = createSyncForge({
+  // Create Synqr instance with in-memory persistence
+  const forge = createSynqr({
     schemas: [ProjectSchema],
     plugins: [createInMemoryPlugin()],
     autoConnect: false, // No network for this demo
@@ -238,7 +238,7 @@ function typeInferenceDemo() {
 
 async function main() {
   console.log('╔═══════════════════════════════════════════╗');
-  console.log('║        SyncForge Demo                     ║');
+  console.log('║        Synqr Demo                     ║');
   console.log('║   Next-Generation CRDT Library            ║');
   console.log('╚═══════════════════════════════════════════╝\n');
 

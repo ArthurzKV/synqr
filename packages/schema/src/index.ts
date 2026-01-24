@@ -1,5 +1,5 @@
 /**
- * @syncforge/schema
+ * synqr-schema
  *
  * Declarative schema system with TypeScript inference
  */

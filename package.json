@@ -1,5 +1,5 @@
 {
-  "name": "syncforge",
+  "name": "synqr",
   "version": "0.1.0",
   "private": true,
   "description": "Next-generation CRDT library for building collaborative offline-first apps",
@@ -7,12 +7,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArthurzKV/syncforge.git"
+    "url": "git+https://github.com/ArthurzKV/synqr.git"
   },
   "bugs": {
-    "url": "https://github.com/ArthurzKV/syncforge/issues"
+    "url": "https://github.com/ArthurzKV/synqr/issues"
   },
-  "homepage": "https://github.com/ArthurzKV/syncforge#readme",
+  "homepage": "https://github.com/ArthurzKV/synqr#readme",
   "keywords": [
     "crdt",
     "collaborative",

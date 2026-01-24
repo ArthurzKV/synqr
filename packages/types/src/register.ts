@@ -10,8 +10,8 @@ import type {
   PrimitiveValue,
   SetRegisterOp,
   Path,
-} from '@syncforge/core';
-import { HybridVectorClock, TimestampOrder } from '@syncforge/core';
+} from 'synqr-core';
+import { HybridVectorClock, TimestampOrder } from 'synqr-core';
 
 /**
  * LWW-Register: Last-Writer-Wins Register

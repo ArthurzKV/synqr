@@ -12,8 +12,8 @@ import type {
   ListInsertOp,
   ListDeleteOp,
   ListMoveOp,
-} from '@syncforge/core';
-import { HybridVectorClock, TimestampOrder } from '@syncforge/core';
+} from 'synqr-core';
+import { HybridVectorClock, TimestampOrder } from 'synqr-core';
 
 /**
  * Unique identifier for a list element

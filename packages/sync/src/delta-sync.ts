@@ -10,8 +10,8 @@ import type {
   Operation,
   ReplicaId,
   SerializedOperation,
-} from '@syncforge/core';
-import { serializeOperation, deserializeOperation } from '@syncforge/core';
+} from 'synqr-core';
+import { serializeOperation, deserializeOperation } from 'synqr-core';
 import type { VersionVector } from './protocol.js';
 
 /**

@@ -5,7 +5,7 @@
  * documents between replicas.
  */
 
-import type { ReplicaId } from '@syncforge/core';
+import type { ReplicaId } from 'synqr-core';
 
 /**
  * Protocol message types

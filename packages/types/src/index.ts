@@ -1,5 +1,5 @@
 /**
- * @syncforge/types
+ * synqr-types
  *
  * CRDT types: Register, Counter, Set, Map, List, Text
  */

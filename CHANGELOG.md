@@ -9,13 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **@syncforge/core**
+- **@synqr-core**
   - Hybrid Vector Clock system
   - Document container with subscriptions
   - Merge engine for conflict resolution
   - Operation system for all CRDT types
 
-- **@syncforge/types**
+- **@synqr-types**
   - LWWRegister and MVRegister
   - GCounter and PNCounter
   - AWSet (Add-Wins Set)
@@ -23,13 +23,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - FugueList (ordered list with Fugue algorithm)
   - RichText and PlainText
 
-- **@syncforge/schema**
+- **@synqr-schema**
   - Declarative schema DSL (`t.lww`, `t.set`, `t.list`, etc.)
   - TypeScript type inference from schemas
   - Runtime validation
   - Schema registry
 
-- **@syncforge/sync**
+- **@synqr-sync**
   - Sync protocol with delta sync
   - WebSocket plugin
   - IndexedDB plugin

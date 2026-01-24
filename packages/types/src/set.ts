@@ -11,8 +11,8 @@ import type {
   Path,
   AddToSetOp,
   RemoveFromSetOp,
-} from '@syncforge/core';
-import { HybridVectorClock, TimestampOrder } from '@syncforge/core';
+} from 'synqr-core';
+import { HybridVectorClock, TimestampOrder } from 'synqr-core';
 
 /**
  * Metadata for a set element

@@ -1,29 +1,39 @@
 {
-  "name": "@syncforge/sync",
+  "name": "synqr-sync",
   "version": "0.1.0",
   "description": "Sync protocol with delta sync and plugin system",
   "type": "module",
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts",
+    "build": "tsup src/index.ts --format esm --external synqr-core --external synqr-types --external synqr-schema --external synqr-sync",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@syncforge/core": "*",
-    "@syncforge/types": "*",
-    "@syncforge/schema": "*"
+    "synqr-core": "*",
+    "synqr-types": "*",
+    "synqr-schema": "*"
   },
   "devDependencies": {
     "typescript": "^5.3.0",
     "tsup": "^8.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurzKV/synqr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArthurzKV/synqr/issues"
+  },
+  "homepage": "https://github.com/ArthurzKV/synqr#readme",
+  "author": "ArthurzKV",
+  "license": "MIT"
 }

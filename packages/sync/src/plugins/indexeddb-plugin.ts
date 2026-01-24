@@ -7,8 +7,8 @@
 import type {
   Operation,
   DocumentSnapshot,
-} from '@syncforge/core';
-import { serializeOperation, deserializeOperation } from '@syncforge/core';
+} from 'synqr-core';
+import { serializeOperation, deserializeOperation } from 'synqr-core';
 import {
   PluginType,
   type PersistencePlugin,
@@ -47,7 +47,7 @@ export class IndexedDBPlugin implements PersistencePlugin {
 
   constructor(options: IndexedDBPluginOptions = {}) {
     this.options = {
-      dbName: 'syncforge',
+      dbName: 'synqr',
       dbVersion: 1,
       ...options,
     };

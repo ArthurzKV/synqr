@@ -1,5 +1,5 @@
 /**
- * SyncForge
+ * Synqr
  *
  * Main entry point that ties together documents, sync, and plugins.
  */
@@ -9,8 +9,8 @@ import {
   createDocument,
   generateReplicaId,
   type ReplicaId,
-} from '@syncforge/core';
-import { type SchemaDefinition, coerce } from '@syncforge/schema';
+} from 'synqr-core';
+import { type SchemaDefinition, coerce } from 'synqr-schema';
 import {
   PluginManager,
   ConnectionState,
@@ -25,9 +25,9 @@ import {
 } from './protocol.js';
 
 /**
- * SyncForge configuration options
+ * Synqr configuration options
  */
-export interface SyncForgeOptions {
+export interface SynqrOptions {
   /** Replica ID (auto-generated if not provided) */
   replicaId?: ReplicaId;
   /** Schema definitions */
@@ -51,9 +51,9 @@ export interface CreateDocumentOptions<T = unknown> {
 }
 
 /**
- * SyncForge - Main CRDT manager
+ * Synqr - Main CRDT manager
  */
-export class SyncForge {
+export class Synqr {
   private readonly replicaId: ReplicaId;
   private readonly pluginManager: PluginManager;
   private readonly syncManager: SyncManager;
@@ -63,7 +63,7 @@ export class SyncForge {
   private autoSyncTimer: ReturnType<typeof setInterval> | null = null;
   private presenceData: Map<string, Map<ReplicaId, PresenceData>> = new Map();
 
-  constructor(options: SyncForgeOptions = {}) {
+  constructor(options: SynqrOptions = {}) {
     this.replicaId = options.replicaId ?? generateReplicaId();
     this.pluginManager = new PluginManager();
     this.syncManager = new SyncManager(this.replicaId);
@@ -369,7 +369,7 @@ export class SyncForge {
   // ============================================
 
   /**
-   * Destroy the SyncForge instance
+   * Destroy the Synqr instance
    */
   async destroy(): Promise<void> {
     if (this.autoSyncTimer) {
@@ -480,7 +480,7 @@ export class TypedDocument<T> {
   constructor(
     private readonly doc: Document,
     private readonly _schema: SchemaDefinition,
-    private readonly _forge: SyncForge
+    private readonly _forge: Synqr
   ) {}
 
   /**
@@ -618,8 +618,8 @@ class ListAccessor<T> {
 }
 
 /**
- * Create a SyncForge instance
+ * Create a Synqr instance
  */
-export function createSyncForge(options?: SyncForgeOptions): SyncForge {
-  return new SyncForge(options);
+export function createSynqr(options?: SynqrOptions): Synqr {
+  return new Synqr(options);
 }

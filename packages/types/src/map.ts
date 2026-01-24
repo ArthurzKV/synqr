@@ -11,8 +11,8 @@ import type {
   Path,
   SetMapValueOp,
   DeleteMapKeyOp,
-} from '@syncforge/core';
-import { HybridVectorClock, TimestampOrder } from '@syncforge/core';
+} from 'synqr-core';
+import { HybridVectorClock, TimestampOrder } from 'synqr-core';
 import { LWWRegister, MVRegister } from './register.js';
 
 /**

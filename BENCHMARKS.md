@@ -1,4 +1,4 @@
-# SyncForge Benchmark Results
+# Synqr Benchmark Results
 
 **Date:** 2026-01-24
 **Node:** v24.12.0
@@ -12,11 +12,11 @@ Single client appending 10,000 characters to a document.
 
 | Library | Time (ms) | Ops/sec | Memory (MB) |
 |---------|-----------|---------|-------------|
-| **SyncForge** | **16.15** | **619,195** | 0.15 |
+| **Synqr** | **16.15** | **619,195** | 0.15 |
 | Yjs | 21.18 | 472,144 | 0.38 |
 | Automerge | 2,072 | 4,826 | -0.61 |
 
-**Result:** SyncForge is **1.3x faster than Yjs** and **128x faster than Automerge**!
+**Result:** Synqr is **1.3x faster than Yjs** and **128x faster than Automerge**!
 
 ---
 
@@ -26,11 +26,11 @@ Two clients make 500 concurrent edits, then merge.
 
 | Library | Merge Time (ms) | Doc Size (bytes) | Memory (MB) |
 |---------|-----------------|------------------|-------------|
-| **SyncForge** | **3.87** | 272,137 | 0.62 |
+| **Synqr** | **3.87** | 272,137 | 0.62 |
 | Yjs | 4.69 | 1,134 | 0.05 |
 | Automerge | 34.61 | 4,257 | 0.12 |
 
-**Result:** SyncForge is **1.2x faster than Yjs** and **9x faster than Automerge**!
+**Result:** Synqr is **1.2x faster than Yjs** and **9x faster than Automerge**!
 
 ---
 

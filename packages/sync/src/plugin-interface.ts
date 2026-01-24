@@ -1,14 +1,14 @@
 /**
  * Plugin Interface
  *
- * Defines the plugin system for SyncForge, allowing extensible
+ * Defines the plugin system for Synqr, allowing extensible
  * persistence, transport, and middleware capabilities.
  */
 
 import type {
   Operation,
   DocumentSnapshot,
-} from '@syncforge/core';
+} from 'synqr-core';
 import type { Message } from './protocol.js';
 
 /**

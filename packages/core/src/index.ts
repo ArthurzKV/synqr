@@ -1,5 +1,5 @@
 /**
- * @syncforge/core
+ * synqr-core
  *
  * Core CRDT engine with Hybrid Vector Clock
  */

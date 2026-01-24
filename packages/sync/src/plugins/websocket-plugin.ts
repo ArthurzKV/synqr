@@ -4,7 +4,7 @@
  * Provides real-time sync over WebSocket connections.
  */
 
-import type { ReplicaId } from '@syncforge/core';
+import type { ReplicaId } from 'synqr-core';
 import {
   PluginType,
   ConnectionState,

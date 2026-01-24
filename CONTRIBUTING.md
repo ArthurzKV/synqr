@@ -1,4 +1,4 @@
-# Contributing to SyncForge
+# Contributing to Synqr
 
 Thanks for your interest in contributing!
 
@@ -6,8 +6,8 @@ Thanks for your interest in contributing!
 
 ```bash
 # Clone the repo
-git clone https://github.com/ArthurzKV/syncforge.git
-cd syncforge
+git clone https://github.com/ArthurzKV/synqr.git
+cd synqr
 
 # Install dependencies
 npm install
@@ -57,4 +57,4 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Questions?
 
-Open a [Discussion](https://github.com/ArthurzKV/syncforge/discussions) or file an issue.
+Open a [Discussion](https://github.com/ArthurzKV/synqr/discussions) or file an issue.

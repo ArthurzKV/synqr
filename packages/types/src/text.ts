@@ -12,8 +12,8 @@ import type {
   TextDeleteOp,
   TextFormatOp,
   TextFormat,
-} from '@syncforge/core';
-import { HybridVectorClock, TimestampOrder } from '@syncforge/core';
+} from 'synqr-core';
+import { HybridVectorClock, TimestampOrder } from 'synqr-core';
 
 /**
  * A span of text with consistent formatting

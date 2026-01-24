@@ -1,5 +1,5 @@
 /**
- * @syncforge/sync
+ * synqr-sync
  *
  * Sync protocol with delta sync and plugin system
  */
@@ -81,11 +81,11 @@ export {
   type IndexedDBPluginOptions,
 } from './plugins/indexeddb-plugin.js';
 
-// SyncForge
+// Synqr
 export {
-  SyncForge,
+  Synqr,
   TypedDocument,
-  createSyncForge,
-  type SyncForgeOptions,
+  createSynqr,
+  type SynqrOptions,
   type CreateDocumentOptions,
-} from './syncforge.js';
+} from './synqr.js';
