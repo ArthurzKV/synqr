@@ -1,0 +1,44 @@
+{
+  "name": "syncforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Next-generation CRDT library for building collaborative offline-first apps",
+  "author": "ArthurzKV",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurzKV/syncforge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArthurzKV/syncforge/issues"
+  },
+  "homepage": "https://github.com/ArthurzKV/syncforge#readme",
+  "keywords": [
+    "crdt",
+    "collaborative",
+    "offline-first",
+    "sync",
+    "real-time",
+    "typescript"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "eslint packages/*/src/**/*.ts",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0",
+    "tsup": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
