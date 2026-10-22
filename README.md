@@ -1,3 +1,5 @@
+
+
 # Synqr
 
 [![CI](https://github.com/ArthurzKV/synqr/actions/workflows/ci.yml/badge.svg)](https://github.com/ArthurzKV/synqr/actions/workflows/ci.yml)
@@ -31,7 +33,7 @@ See [BENCHMARKS.md](BENCHMARKS.md) for full results.
 
 ```typescript
 import { createDocument, merge } from 'synqr-core';
-import { defineSchema, t } from '@synqr-schema';
+import { defineSchema, t } from 'synqr-schema';
 
 // Define your schema with full TypeScript inference
 const TaskSchema = defineSchema({
@@ -66,7 +68,7 @@ console.log(merged.get('priority')); // 1 - counters add up
 ## Installation
 
 ```bash
-npm install synqr-core @synqr-types @synqr-schema @synqr-sync
+npm install synqr-core synqr-types synqr-schema synqr-sync
 ```
 
 Or install packages individually:
@@ -76,13 +78,13 @@ Or install packages individually:
 npm install synqr-core
 
 # CRDT type implementations
-npm install @synqr-types
+npm install synqr-types
 
 # Schema system
-npm install @synqr-schema
+npm install synqr-schema
 
 # Sync protocol & plugins
-npm install @synqr-sync
+npm install synqr-sync
 ```
 
 ## Packages
@@ -90,9 +92,9 @@ npm install @synqr-sync
 | Package | Description |
 |---------|-------------|
 | `synqr-core` | CRDT engine, hybrid clock, document, merge |
-| `@synqr-types` | LWW/MV registers, counters, sets, maps, lists, rich text |
-| `@synqr-schema` | Declarative schemas with TypeScript inference |
-| `@synqr-sync` | Sync protocol, WebSocket & IndexedDB plugins |
+| `synqr-types` | LWW/MV registers, counters, sets, maps, lists, rich text |
+| `synqr-schema` | Declarative schemas with TypeScript inference |
+| `synqr-sync` | Sync protocol, WebSocket & IndexedDB plugins |
 
 ## CRDT Types
 
